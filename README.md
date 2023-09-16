@@ -11,6 +11,7 @@ Currently, we have two rough C# interfaces, `IStudentAPI` and `ICourseAPI`, with
 We would like to see how you would improve the example code. Please include a couple sentences describing your changes
 along with the rationale, along with any additional changes you would have made given more time.
 
+
 ## API Design
 
 Extend the `IStudentAPI` to include methods to satisfy the following criteria:

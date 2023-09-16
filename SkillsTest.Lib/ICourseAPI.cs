@@ -1,19 +1,23 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace SkillsTest.Lib
 {
     public interface ICourseAPI
     {
-        Course GetById(int id);
-    }
+        Course? GetById(int id);
 
-    public class DbCourseAPI : ICourseAPI
-    {
-        public DataContext Db { get; set; }
+        Course? GetByName(string name);
 
-        public Course GetById(int id)
-        {
-            return Db.Courses.Where(course => course.Id == id).SingleOrDefault();
-        }
+        IEnumerable<Course> GetAllCourses(int page = 1, int pageSize = 50);
+
+        void AddCourse(string courseName);
+
+        void UpdateCourse(int courseId, string courseName);
+
+        void DeleteCourse(int courseId);
     }
 }
